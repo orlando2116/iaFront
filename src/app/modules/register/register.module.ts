@@ -7,7 +7,8 @@ import { RegisterComponent } from '../../components/register/register.component'
 import { MaterialModule } from '../shared/material.module';
 
 //services
-import { SubscriptionService } from 'src/app/services/subscription.service';
+import { SubscriptionService } from '../../services/subscription.service';
+import { FlashMessageService } from '../../services/shared/flash-message.service';
 
 @NgModule({
   declarations: [RegisterComponent],
@@ -18,7 +19,8 @@ import { SubscriptionService } from 'src/app/services/subscription.service';
     RegisterRoutingModule
   ],
   providers:[
-    SubscriptionService
+    SubscriptionService,
+    FlashMessageService
   ],
   exports:[RegisterComponent]
 })

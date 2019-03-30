@@ -12,12 +12,14 @@ import { HttpModule } from '@angular/http';
 
 /*shared*/
 import { OpcionesHttp } from './services/shared/opciones-http';
+import { NgFlashMessagesModule } from 'ng-flash-messages';
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    NgFlashMessagesModule.forRoot(),
     BrowserAnimationsModule,
     HttpClientModule,HttpModule,
     RegisterModule,
