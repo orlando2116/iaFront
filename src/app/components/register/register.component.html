@@ -1,0 +1,24 @@
+  <div class="text">
+    <h1>Cursos de Verano PRO</h1>
+    <p>no dejes pasar esta increible oportunidad. Inscribete aca</p>
+  </div>
+  <div class="row register">
+    <div class="col-md-6">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="nombre" [(ngModel)]="subscription.name">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+          <input matInput placeholder="Telefono" [(ngModel)]="subscription.phone">
+      </mat-form-field>
+    </div>
+    <div class="col-md-6">
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Correo" [(ngModel)]="subscription.email">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <input matInput placeholder="Rut" [(ngModel)]="subscription.rut">
+      </mat-form-field>
+    </div>
+  </div>
+
+  <button mat-raised-button class="block" (click)="userSubscription()">Inscribirse</button>

@@ -1,0 +1,17 @@
+.register{
+  margin-top: 30px;
+}
+.full-width {
+    width: 100%;
+  }
+
+button{
+    background-color: #4CAF5D;
+    border-color: #4CAF5D;
+    color: #FFFFFF;
+  }
+  
+.text > h1,p{
+  color: #FFFFFF;
+  text-align: center;
+}
