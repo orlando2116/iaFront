@@ -12,6 +12,8 @@ import { Subscription } from 'src/app/models/subscription';
 })
 export class RegisterComponent implements OnInit {
 
+  private loading: boolean= false;
+
   private subscription:Subscription=new Subscription();
 
   constructor(private _subscriptionService:SubscriptionService,
@@ -21,12 +23,17 @@ export class RegisterComponent implements OnInit {
   }
 
   userSubscription(){
+    if(this.loading)
+      return;
+
+    this.loading=true;
       this._subscriptionService.post(this.subscription)
       .subscribe(data => {
-        console.log(data);
         this._flashMessageService.mostrarMensaje(`Usuario ${data.message.subscription.name} registrado con éxito.`,'success');
+        this.loading=false;
       },
       error => {
+        this.loading=false;
         if(error.status===400){
           this._flashMessageService.mostrarMensaje(`ya existe usuario registrado con este email`,'danger');
           return;
@@ -38,6 +45,7 @@ export class RegisterComponent implements OnInit {
   }
 
   validateFields(){
+   
     if(this.subscription.email &&
        this.subscription.name &&
         this.subscription.phone &&

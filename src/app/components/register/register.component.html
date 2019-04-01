@@ -21,4 +21,8 @@
     </div>
   </div>
 
-  <button mat-raised-button class="block" (click)="userSubscription()" [disabled]="validateFields()">Inscribirse</button>
+  <button mat-raised-button class="block" (click)="userSubscription()" [disabled]="validateFields()">
+    Inscribirse
+    <i class="fas fa-spinner fa-spin" *ngIf="loading"></i>
+
+  </button>
